@@ -4,14 +4,15 @@ import random
 import os
 
 
+
 #loads player's images
 PLAYER=[PGIMLOAD(path+'player.png'),PGIMLOAD(path+'playerLeft.png'),PGIMLOAD(path+'playerRight.png'),PGIMLOAD(path+'playerDamaged.png')]
 #loads images of meteorites and enemy
 MOBS=[PGIMLOAD(path+'enemyShip.png'),PGIMLOAD(path+'enemyUFO.png'),PGIMLOAD(path+'meteorBig.png'),PGIMLOAD(path+'meteorSmall.png')]
 #loads images for explosion of meteorites and enemies
-ExplosionList=[pg.image.load(f'Explosion\\explosion{int(x)}.png') for x in range(1,15)]
+ExplosionList=[pg.image.load(f'Explosion{os.sep}explosion{int(x)}.png') for x in range(1,15)]
 #loads images for explosion of player
-SelfExplosionList=[pg.image.load(f'Qexplosion\\{int(x)}.png') for x in range(1,21)]
+SelfExplosionList=[pg.image.load(f'Qexplosion{os.sep}{int(x)}.png') for x in range(1,21)]
 
 class Player(pg.sprite.Sprite):
     """This class extends Sprite class of pygame that is in sprite module of pygame library and overrides update method of Sprite class.
